@@ -7,8 +7,8 @@
 </head>
 
 <body>
-    <div class='center'>
-        <h1>Strong Password Check</h1>
+    <div class='heading'>
+        <h1>Strong Password Checker</h1>
         <ul>A Strong Password Must Have these Properities</ul>
         <li>Must Be Longer Than Twelve Characters</li>
         <li>At Least One Uppercase Letter</li>
@@ -17,26 +17,33 @@
         <li>At Least One Special Character "!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
         </li>
     </div>
-    <div class=container>
+    <div class=passwordContainer>
         <h2>Please Type Password Here</h2>
         <form>
             <input type='text' placeholder="password">
-            <input type="submit" value="Check Password">
-            <label for="passwordLength">Password is Longer than Twelve Characters</label>
-            <input type="checkbox" id="passwordLegnth">
-            <label for="containsUpperCase">Contains One Uppercase Letter</label>
-            <input type="checkbox" id="containsUpperCase">
-            <label for="containsLowerCase">Contains One Lowercase Letter</label>
-            <input type="checkbox" id="containsLowerCase">
-            <label for="containsNumber">Contains One Number </label>
-            <input type="checkbox" id="containsNumber">
-            <label for="containsSpecialCharacter">Contains One Special Character </label>
-            <input type="checkbox" id="containsSpecialCharacter">
+            <input type="submit" value="Check Password" id="password">
 
         </form>
+    </div>
+    <div class="checklist">
+        <label for="passwordLength">Password is Longer than Twelve Characters</label>
+        <input type="checkbox" id="passwordLegnth">
+        <label for="containsUpperCase">Contains One Uppercase Letter</label>
+        <input type="checkbox" id="containsUpperCase">
+        <label for="containsLowerCase">Contains One Lowercase Letter</label>
+        <input type="checkbox" id="containsLowerCase">
+        <label for="containsNumber">Contains One Number </label>
+        <input type="checkbox" id="containsNumber">
+        <label for="containsSpecialCharacter">Contains One Special Character </label>
+        <input type="checkbox" id="containsSpecialCharacter">
+    </div>
+    <div class="securityCheck">
+        <h2>Has This Password Been Comprimsed?</h2>
 
     </div>
-
+    <div class="common">
+        <h2>Is This password Common?</h2>
+    </div>
 
 </body>
 

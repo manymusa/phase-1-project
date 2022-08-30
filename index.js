@@ -1,7 +1,13 @@
-let submitPassword = document.querySelector('form');
+const submitPassword = document.querySelector('form');
+const textField = document.querySelector('.text'); 
+
 
 submitPassword.addEventListener('submit',(e) =>{
     e.preventDefault();
-    textContent =  document.querySelector('.text').value
+    textContent =  textField.value
     submitPassword.reset();
+})
+
+textField.addEventListener('input', (e)=>{
+    console.log(e.data);
 })

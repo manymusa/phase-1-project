@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./style.css">
-        <script src="index.js" defer charset="utf-8"></script>
-    </head>
-    <body>
-        <div class = 'center'>
-            <h1>Strong Password Check</h1>
-            <ul>A Strong Password Must Have these Properities</ul>
-            <li>At Least One Uppercase Letter</li>
-            <li>At Least One Lowercase Letter</li>
-            <li>At Least One Number</li>
-            <li>At Least One Special Character "!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 
-            </li>
-        </div>
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <script src="index.js" defer charset="utf-8"></script>
+</head>
+
+<body>
+    <div class='center'>
+        <h1>Strong Password Check</h1>
+        <ul>A Strong Password Must Have these Properities</ul>
+        <li>Must Be Longer Than Twelve Characters</li>
+        <li>At Least One Uppercase Letter</li>
+        <li>At Least One Lowercase Letter</li>
+        <li>At Least One Number</li>
+        <li>At Least One Special Character "!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+        </li>
+    </div>
+    <div class=container>
+        <h2>Please Type Password Here</h2>
         <form>
-            
+            <input type='text' placeholder="password">
+            <input type="submit" value="Check Password">
+            <label for="passwordLength">Password is Longer than Twelve Characters</label>
+            <input type="checkbox" id="passwordLegnth">
+            <label for="containsUpperCase">Contains One Uppercase Letter</label>
+            <input type="checkbox" id="containsUpperCase">
+            <label for="containsLowerCase">Contains One Lowercase Letter</label>
+            <input type="checkbox" id="containsLowerCase">
+            <label for="containsNumber">Contains One Number </label>
+            <input type="checkbox" id="containsNumber">
+            <label for="containsSpecialCharacter">Contains One Special Character </label>
+            <input type="checkbox" id="containsSpecialCharacter">
+
         </form>
 
-    </body>
+    </div>
+
+
+</body>
+
 </html>

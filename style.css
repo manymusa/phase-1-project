@@ -15,3 +15,11 @@ div>h1{
     margin-top: 0px;
 }
 
+.container{
+    text-align: center;
+    border: 0.4rem solid white;
+    background-color: blue;
+    font-weight: bold;
+    color: green;
+    border-radius: 1rem;
+}

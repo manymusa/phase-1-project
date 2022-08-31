@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="./style.css">
     <script src="index.js" defer charset="utf-8"></script>
-
+    <script src="js-sha1/src/sha1.js" defer charset="utf-8"></script>
 </head>
 
 <body>
@@ -27,24 +27,29 @@
     <div class="checklist">
         <ul >
             <li>
-                <label for="passwordLength">Password is Longer than Twelve Characters</label>
-                <input type="checkbox" id="passwordLegnth">
+                <label for="passwordLength">Password is Longer than Twelve Characters
+                    <input type="checkbox" id="passwordLegnth" disabled="true">
+                </label>
             </li>
             <li>
-                <label for="containsUpperCase">Contains One Uppercase Letter</label>
-                <input type="checkbox" id="containsUpperCase">
+                <label for="containsUpperCase">Contains One Uppercase Letter
+                    <input type="checkbox" id="containsUpperCase" disabled="true">
+                </label>
             </li>
             <li>
-                <label for="containsLowerCase">Contains One Lowercase Letter</label>
-                <input type="checkbox" id="containsLowerCase">
+                <label for="containsLowerCase">Contains One Lowercase Letter
+                    <input type="checkbox" id="containsLowerCase" disabled="true">
+                </label>
             </li>
             <li>
-                <label for="containsNumber">Contains One Number </label>
-                <input type="checkbox" id="containsNumber">
+                <label for="containsNumber">Contains One Number 
+                    <input type="checkbox" id="containsNumber" disabled="true">
+                </label>
             </li>
             <li>
-                <label for="containsSpecialCharacter">Contains One Special Character </label>
-                <input type="checkbox" id="containsSpecialCharacter">
+                <label for="containsSpecialCharacter">Contains One Special Character 
+                    <input type="checkbox" id="containsSpecialCharacter" disabled="true">
+                </label>
             </li>
         </ul>
 

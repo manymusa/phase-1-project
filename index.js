@@ -1,5 +1,7 @@
 const submitPassword = document.querySelector('form');
 const textField = document.querySelector('.text'); 
+// const specialCharacters =  ['!', `"`, '#', '$', '%', `&`, `'`, '(', ')', '*', '+', `,`, '-', `.`, '/', `:`, `:`, '<', `=`, '>', '?', '@', '[', `\`, `]`, '^', '_', "\`" , "{" ,'|' ,"}", "~"]
+
 
 
 submitPassword.addEventListener('submit',(e) =>{
@@ -9,5 +11,5 @@ submitPassword.addEventListener('submit',(e) =>{
 })
 
 textField.addEventListener('input', (e)=>{
-    console.log(e.data);
+    console.log(textField.value);
 })

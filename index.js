@@ -1,5 +1,6 @@
 const submitPassword = document.querySelector('form');
 const textField = document.querySelector('.text'); 
+
 const regexTest = {
     'containsLowerCase': /[a-z]/,
     'containsUpperCase' : /[A-Z]/,
@@ -8,13 +9,6 @@ const regexTest = {
     'passwordLength': /^.{12,}/
 
 }
-// const regexLowerCaseLetters = /[a-z]/gm
-
-// const regexUpperCaseLetters = /[A-Z]/g
-// const regexNumbers = /[0-9]/g
-// const regexSpeicalCharacters = /[$&+,:;=?@#|'<>.^*()%!-]/g
-
-
 
 submitPassword.addEventListener('submit',(e) =>{
     e.preventDefault();

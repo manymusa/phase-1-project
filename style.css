@@ -54,7 +54,6 @@ ul{
 .securityCheck{
     border: 0.4rem solid white;
     border-radius: 1rem;
-
     background-color: yellow;
     text-align: center;
     color:violet;
@@ -73,8 +72,3 @@ ul{
     padding-bottom: 10%;
 }
 
-/* #passwordLength{
-    display: inline-block;
-    width: 2rem;
-    vertical-align: middle;
-} */

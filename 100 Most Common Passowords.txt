@@ -31,8 +31,6 @@ monkey
 livetest
 55555
 soccer
-
-
 charlie
 asdfghjkl
 654321
@@ -65,8 +63,6 @@ summer
 fitness
 bailey
 zxcvbnm
-
-
 fuckyou
 121212
 buster

@@ -35,6 +35,11 @@ ul{
 
 }
 
+
+#resultContainer{
+    display: flex;
+}
+
 .checklist{
     border: 0.4rem solid white;
     border-radius: 1rem;
@@ -49,6 +54,7 @@ ul{
 .securityCheck{
     border: 0.4rem solid white;
     border-radius: 1rem;
+
     background-color: yellow;
     text-align: center;
     color:violet;

@@ -1,10 +1,12 @@
 const submitPassword = document.querySelector('form');
 const textField = document.querySelector('.text'); 
 const regexTest = {
-    'containsLowerCase': /[a-z]/gm,
-    'containsUpperCase' : /[A-Z]/gm,
-    'containsNumber' : /[0-9]/gm,
-    'containsSpecialCharacter' : /[$&+,:;=?@#|'<>.^*()%!-]/gm,
+    'containsLowerCase': /[a-z]/,
+    'containsUpperCase' : /[A-Z]/,
+    'containsNumber' : /[0-9]/,
+    'containsSpecialCharacter' : /\W/,
+    'passwordLength': /^.{12,}/
+
 }
 // const regexLowerCaseLetters = /[a-z]/gm
 
@@ -26,26 +28,22 @@ textField.addEventListener('input', (e)=>{
 
 })
 
-//checked to see if password contains values needed
-//if the values are found, then we enable checkbox and check it 
-//if its 
 function passwordChecker (password){
-    for(let value in regexTest){
-        let checkbox =  document.querySelector('input#'+value);
-        let charTest = regexTest[value];
+    for(let key in regexTest){
+        let checkbox =  document.querySelector('input#'+key);
+        console.log('checkbox:' + checkbox);
+        let charTest = regexTest[key];
         switch(charTest.test(password)){
             case true:
+                console.log(`charTest Passed: ${charTest}, Password: ${password}`)
                 checkbox.checked = true;
                 checkbox.disabled = false;
                 break;
             case false:
+                console.log(`charTest Failed ${charTest}, Password: ${password}`)
                 checkbox.checked = false;
                 checkbox.disabled = true;
                 break;
         }
     }
-    if(password.length > 12){
-        
-    }
-    
 }

@@ -7,37 +7,42 @@ const regexTest = {
     'containsNumber' : /[0-9]/,
     'containsSpecialCharacter' : /\W/,
     'passwordLength': /^.{12,}/
-
-}
+};
 
 submitPassword.addEventListener('submit',(e) =>{
     e.preventDefault();
-    textContent =  textField.value
+    textContent =  textField.value;
+    isPasswordCompromised(textContent);
     submitPassword.reset();
 })
 
 textField.addEventListener('input', (e)=>{
     let password = textField.value;
-    passwordChecker(password)
+    passwordStrengthChecker(password);
 
 })
 
-function passwordChecker (password){
+function passwordStrengthChecker(password){
     for(let key in regexTest){
         let checkbox =  document.querySelector('input#'+key);
-        console.log('checkbox:' + checkbox);
         let charTest = regexTest[key];
         switch(charTest.test(password)){
             case true:
-                console.log(`charTest Passed: ${charTest}, Password: ${password}`)
                 checkbox.checked = true;
                 checkbox.disabled = false;
                 break;
             case false:
-                console.log(`charTest Failed ${charTest}, Password: ${password}`)
                 checkbox.checked = false;
                 checkbox.disabled = true;
                 break;
         }
     }
+}
+
+function isPasswordCompromised(password){
+    let hashedPassword =  sha1(password);
+    let firstFiveCharsOfHash =  hashedPassword.slice(0,5);
+    fetch('https://api.pwnedpasswords.com/range/'+firstFiveCharsOfHash)
+
+
 }

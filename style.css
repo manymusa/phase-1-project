@@ -5,18 +5,13 @@ body{
     font-weight: bold;
 }
 
-div#heading,div#passwordContainer,div#checklist,div#securityCheck,div#common{
+div:not(#resultContainer){
     border: 0.4rem solid white;
     border-radius: 1rem;
 }
 
 div>h1{
     margin-top: 0px;
-}
-
-div#checklist>ul{
-    list-style-type: none;
-    font-weight: bold;
 }
 
 div>div{
@@ -41,7 +36,6 @@ div>div{
     padding: 1rem;
     margin-left: 25%;
     margin-right: 25%;
-
 }
 
 #checklist{

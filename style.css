@@ -5,7 +5,7 @@ body{
     font-weight: bold;
 }
 
-div#heading,div#passwordContainer{
+div#heading,div#passwordContainer,div#checklist,div#securityCheck,div#common{
     border: 0.4rem solid white;
     border-radius: 1rem;
 }
@@ -20,8 +20,6 @@ div#checklist>ul{
 }
 
 div>div{
-    border: 0.4rem solid white;
-    border-radius: 1rem;
     width: 33%;
     padding-top: 8.5%;
     padding-bottom: 8.5%;

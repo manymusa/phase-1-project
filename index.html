@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class='heading'>
+    <div id='heading'>
         <h1>Strong Password Checker</h1>
         <ul>A Strong Password Must Have these Properities</ul>
             <li>Must Be Longer Than Twelve Characters</li>
@@ -17,7 +17,7 @@
             <li>At Least One Number</li>
             <li>At Least One Special Character ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~</li>
     </div>
-    <div class=passwordContainer>
+    <div id=passwordContainer>
         <h2>Please Type Password Here</h2>
         <form>
             <input type='text' placeholder="enter password here..." class="text">
@@ -25,7 +25,7 @@
         </form>
     </div>
     <div id="resultContainer">
-        <div class="checklist">
+        <div id="checklist">
             <ul >
                 <li>
                     <label for="passwordLength">Password is Longer than Twelve Characters
@@ -53,18 +53,15 @@
                     </label>
                 </li>
             </ul>
-    
         </div>
-        <div class="securityCheck">
+        <div id="securityCheck">
             <h2>Is This Password Compromised?</h2>
             <h2 id="compromised-result"></h2>
         </div>
-        <div class="common">
+        <div id="common">
             <h2>Is This Password Common?</h2>
-            <h3 id="common-result"></h3>
+            <h2 id="common-result"></h2>
         </div>
     </div>
-
 </body>
-
 </html>

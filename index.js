@@ -21,6 +21,7 @@ submitPassword.addEventListener('submit',(e) =>{
 textField.addEventListener('input', (e)=>{
     let password = textField.value;
     commonPasswordResult.textContent = ''
+    compromisedPasswordResult.textContent = ''
     passwordStrengthChecker(password);
 
 })
@@ -28,6 +29,7 @@ textField.addEventListener('input', (e)=>{
 function passwordStrengthChecker(password){
     for(let key in regexTest){
         let checkbox =  document.querySelector('input#'+key);
+        console.log(checkbox);
         let charTest = regexTest[key];
         switch(charTest.test(password)){
             case true:
@@ -45,7 +47,7 @@ function passwordStrengthChecker(password){
 function isPasswordCompromised(password){
     const hashedPassword =  sha1(password).toUpperCase();
     const hashedPrefix =  hashedPassword.substring(0,5);
-    const hashedSuffix = hashedPassword.substring(5,hashedPassword.length);
+    const hashedSuffix = hashedPassword.substring(5,40);
     fetch(`https://api.pwnedpasswords.com/range/${hashedPrefix}`)
     .then(Response => Response.text())
     .then(text => {
@@ -58,8 +60,6 @@ function isPasswordCompromised(password){
 
 function compareHashes(arr,hash){
     const foundHash = arr.find(element => element === hash);
-    console.log(foundHash);
-
     if(foundHash){
         compromisedPasswordResult.textContent = 'Yes';
     } else{
@@ -69,8 +69,8 @@ function compareHashes(arr,hash){
 
 function isPasswordCommon(password){
     const mostCommonPassword = ['12345','123456','123456789','test1','password','12345678','zinch','g_czechout','asdf','qwerty','1234567890','1234567',,'Aa123456.','iloveyou','1234','abc123','111111','123123','dubsmash','test','princess','qwertyuiop','sunshine','BvtTest123','11111','ashley','00000','000000','password1','monkey','livetest','55555','soccer','charlie','asdfghjkl','654321','family','michael','123321','football','baseball','q1w2e3r4t5y6','nicole','jessica','purple','shadow','hannah','chocolate','michelle','daniel','maggie','qwerty123','hello','112233','jordan','tigger','666666','987654321','superman','12345678910','summer','1q2w3e4r5t','fitness','bailey','zxcvbnm','fuckyou','121212','buster','butterfly','dragon','jennifer','amanda','justin','cookie','basketball','shopping','pepper','joshua','hunter','ginger','matthew','abcd1234','taylor','samantha','whatever','andrew','1qaz2wsx3edc','thomas','jasmine','animoto','madison','0987654321','54321','flower','Password','maria','babygirl','lovely','sophie','Chegg123'];
-    const isCommon = mostCommonPassword.filter(ele => ele === password);
-    if(isCommon.length === 1){
+    const isCommon = mostCommonPassword.find(ele => ele === password);
+    if(isCommon){
         commonPasswordResult.textContent = 'Yes';
     }else{
         commonPasswordResult.textContent = 'No';

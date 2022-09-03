@@ -1,33 +1,44 @@
 body{
     background-color: black;
     font-family: Helvetica;
+    text-align: center;
+    font-weight: bold;
+}
+
+div#heading,div#passwordContainer{
+    border: 0.4rem solid white;
+    border-radius: 1rem;
 }
 
 div>h1{
     margin-top: 0px;
 }
 
-ul{
+div#checklist>ul{
     list-style-type: none;
     font-weight: bold;
 }
 
-.heading{
-    text-align: center;
+div>div{
     border: 0.4rem solid white;
-    background-color: grey;
-    font-weight: bold;
-    color: white;
     border-radius: 1rem;
+    width: 33%;
+    padding-top: 8.5%;
+    padding-bottom: 8.5%;
 }
 
-.passwordContainer{
-    border: 0.4rem solid white;
+#resultContainer{
+    display: flex;
+}
+
+#heading{
+    background-color: grey;
+    color: white;
+}
+
+#passwordContainer{
     background-color: blue;
-    font-weight: bold;
-    text-align: center;
     color: orange;
-    border-radius: 1rem;
     width: 50%;
     padding: 1rem;
     margin-left: 25%;
@@ -35,40 +46,18 @@ ul{
 
 }
 
-
-#resultContainer{
-    display: flex;
-}
-
-.checklist{
-    border: 0.4rem solid white;
-    border-radius: 1rem;
+#checklist{
     background-color: green;
-    text-align: center;
     color:red;
-    width: 33%;
-    padding-top: 8.5%;
-    padding-bottom: 8.5%;
 }
 
-.securityCheck{
-    border: 0.4rem solid white;
-    border-radius: 1rem;
+#securityCheck{
     background-color: yellow;
-    text-align: center;
     color:purple;
-    width: 33%;
-    padding-top: 8.5%;
-    padding-bottom: 8.5%;
 }
-.common{
-    border: 0.4rem solid white;
-    border-radius: 1rem;
+
+#common{
     background-color: red;
-    text-align: center;
     color:green;
-    width: 33%;
-    padding-top: 8.5%;
-    padding-bottom: 8.5%;
 }
 

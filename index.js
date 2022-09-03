@@ -49,12 +49,22 @@ function isPasswordCompromised(password){
     fetch(`https://api.pwnedpasswords.com/range/${hashedPrefix}`)
     .then(Response => Response.text())
     .then(text => {
-        const resultHashes =text.split('\r\n') 
-        console.log(resultHashes);
+        const resultHashes =text.split('\r\n').map(hash => hash.substring(0,35));
+        compareHashes(resultHashes,hashedSuffix);
     })
-
     .catch(err => console.error(err))
 
+}
+
+function compareHashes(arr,hash){
+    const foundHash = arr.find(element => element === hash);
+    console.log(foundHash);
+
+    if(foundHash){
+        compromisedPasswordResult.textContent = 'Yes';
+    } else{
+        compromisedPasswordResult.textContent = 'No';
+    }
 }
 
 function isPasswordCommon(password){

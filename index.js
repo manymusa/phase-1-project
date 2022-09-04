@@ -14,10 +14,9 @@ const regexTest = {
 
 submitPassword.addEventListener('submit', (e) => {
     e.preventDefault();
-    textContent = textField.value;
-    isPasswordCompromised(textContent);
-    passwordComparison(mostCommonPasswords, textContent, commonPasswordH2);
-    submitPassword.reset();
+    password = textField.value;
+    isPasswordCompromised(password);
+    passwordComparison(mostCommonPasswords, password, commonPasswordH2);
 })
 
 textField.addEventListener('input', () => {
@@ -82,14 +81,14 @@ function passwordComparison(arr, str, node) {
             case false: 
                 return ele === str
         }
-    })
+    });
     if (matchedString) {
         if (node === compromisedPasswordH2) {
-            node.textContent = 'Yes, Click To See How Many Times It Has Been Breached'
+            node.textContent = 'Yes, Click To See How Many Times It Has Been Breached';
         } else {
             node.textContent = 'Yes';
         }
     } else {
-        node.textContent = 'No';
+        node.textContent = 'No'
     }
 }

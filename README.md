@@ -2,6 +2,13 @@
 
 This site will, on user input, take a password and respond with the password strength, commonality, and if was a part of any database breaches.
 
+## How to use
+
+Fork then clone this repo. 
+
+You can access the page by typing open index.html in the terminal.
+
+
 ## How Does It Work?
 
 Upon forking and downloading repo, you will be able to open the index.html and be presented with this.

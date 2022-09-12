@@ -57,6 +57,7 @@ function isPasswordCompromised(password) {
     const hashedPassword = sha1(password).toUpperCase();
     const hashedPrefix = hashedPassword.substring(0, 5);
     const hashedSuffix = hashedPassword.substring(5, 40);
+
     fetch(`https://api.pwnedpasswords.com/range/${hashedPrefix}`)
         .then(Response => Response.text())
         .then(text => {

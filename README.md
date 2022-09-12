@@ -6,8 +6,9 @@ This site will, on user input, take a password and respond with the password str
 
 Fork then clone this repo. 
 
-You can access the page by typing open index.html in the terminal.
+You need to also clone the following repo as well and have it in the same directory: https://github.com/emn178/js-sha1/tree/65b3898c4eecc919477dce9c6e41bb0be1b65219
 
+You can access the page by typing open index.html in the terminal.
 
 ## How Does It Work?
 
@@ -42,3 +43,5 @@ I would like to credit github user emn178 for their sha1 repo. It was great help
 Link to most common passwords in 2022: https://techcult.com/most-common-passwords/ 
 
 Link to haveIBeenPwned API: https://haveibeenpwned.com/API/v3#PwnedPasswords 
+
+Link to random password generator API: https://makemeapassword.ligos.net/Api

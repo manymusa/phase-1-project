@@ -2,8 +2,11 @@ const submitPassword = document.querySelector('form');
 const textField = document.querySelector('.text');
 const commonPasswordH2 = document.querySelector('#common-result');
 const compromisedPasswordH2 = document.querySelector('#compromised-result');
+const newPassBtn = document.querySelector('#newPass');
 let numberOfTimeBreached;
 const mostCommonPasswords = ['12345', '123456', '123456789', 'test1', 'password', '12345678', 'zinch', 'g_czechout', 'asdf', 'qwerty', '1234567890', '1234567', , 'Aa123456.', 'iloveyou', '1234', 'abc123', '111111', '123123', 'dubsmash', 'test', 'princess', 'qwertyuiop', 'sunshine', 'BvtTest123', '11111', 'ashley', '00000', '000000', 'password1', 'monkey', 'livetest', '55555', 'soccer', 'charlie', 'asdfghjkl', '654321', 'family', 'michael', '123321', 'football', 'baseball', 'q1w2e3r4t5y6', 'nicole', 'jessica', 'purple', 'shadow', 'hannah', 'chocolate', 'michelle', 'daniel', 'maggie', 'qwerty123', 'hello', '112233', 'jordan', 'tigger', '666666', '987654321', 'superman', '12345678910', 'summer', '1q2w3e4r5t', 'fitness', 'bailey', 'zxcvbnm', 'fuckyou', '121212', 'buster', 'butterfly', 'dragon', 'jennifer', 'amanda', 'justin', 'cookie', 'basketball', 'shopping', 'pepper', 'joshua', 'hunter', 'ginger', 'matthew', 'abcd1234', 'taylor', 'samantha', 'whatever', 'andrew', '1qaz2wsx3edc', 'thomas', 'jasmine', 'animoto', 'madison', '0987654321', '54321', 'flower', 'Password', 'maria', 'babygirl', 'lovely', 'sophie', 'Chegg123'];
+
+
 const regexTest = {
     'containsLowerCase': /[a-z]/,
     'containsUpperCase': /[A-Z]/,
@@ -36,6 +39,13 @@ compromisedPasswordH2.addEventListener('click', ()=>{
     compromisedPasswordH2.appendChild(p);
 })
 
+newPassBtn.addEventListener('click', () => {
+    const p = newPassBtn.previousElementSibling;
+    fetch('https://makemeapassword.ligos.net/api/v1/passphrase/json?sp=n')
+        .then(Response => Response.json())
+        .then(json => p.textContent = json['pws'][0])
+})
+
 function passwordStrength(password) {
     for (let key in regexTest) {
         let checkbox = document.querySelector('input#' + key);
@@ -61,6 +71,7 @@ function isPasswordCompromised(password) {
     fetch(`https://api.pwnedpasswords.com/range/${hashedPrefix}`)
         .then(Response => Response.text())
         .then(text => {
+            console.log(text);
             const resultHashes = text.split('\r\n').map(hash => {
                 const result = hash.split(':');
                 return {

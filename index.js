@@ -40,10 +40,12 @@ compromisedPasswordH2.addEventListener('click', ()=>{
 })
 
 newPassBtn.addEventListener('click', () => {
-    const p = newPassBtn.previousElementSibling;
     fetch('https://makemeapassword.ligos.net/api/v1/passphrase/json?sp=n')
         .then(Response => Response.json())
-        .then(json => p.textContent = json['pws'][0])
+        .then(json => {
+            const p = newPassBtn.previousElementSibling;
+            p.textContent = json['pws'][0];
+        })
 })
 
 function passwordStrength(password) {

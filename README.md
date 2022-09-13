@@ -42,6 +42,7 @@ If the password has been breached, the user can click on the suggested text to s
 # Roadmap
 
 In the future I would want to include more than 100 passwords.
+I would also like to create stronger auto generated passwords
 
 # Credits 
 
